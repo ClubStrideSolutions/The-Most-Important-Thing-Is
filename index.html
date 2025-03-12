@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>The Most Important Thing Is: Your Driving Purpose</title>
+    <style>
+        :root {
+            --primary-color: #3a2473;
+            --secondary-color: #5d4a98;
+            --accent-color: #fd7e14;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --text-color: #212529;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f1f3f5;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #7251b5);
+            color: white;
+            padding: 2.5rem;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        header h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .date-box {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+        
+        /* INTRO SECTION */
+        .intro-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .intro-message {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 1.5rem auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .why-attend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        
+        .why-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .why-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .why-card p {
+            color: #495057;
+            font-size: 0.95rem;
+        }
+        
+        /* LEARNING SECTION */
+        .learning-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .learning-objectives {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1rem 0 1.5rem 0;
+        }
+        
+        .objective-card {
+            flex: 1;
+            min-width: 200px;
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .objective-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .objective-card p {
+            color: #495057;
+            font-size: 0.95rem;
+        }
+        
+        /* SESSION GRID & CARDS */
+        .session-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .session-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .session-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .session-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .session-card h3 .time {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: normal;
+        }
+        
+        .session-card ul {
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        
+        .session-card li {
+            margin-bottom: 0.5rem;
+            color: #495057;
+        }
+        
+        .session-card p {
+            margin-bottom: 1rem;
+            color: #495057;
+            font-size: 0.95rem;
+        }
+        
+        .expand-icon {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        
+        .detailed-content {
+            display: none;
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-top: 3px solid var(--primary-color);
+        }
+        
+        .detailed-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* BOX STYLES */
+        .definition-box {
+            background-color: #e7f5ff;
+            border-left: 4px solid #4dabf7;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .definition-box h4 {
+            color: #1864ab;
+            margin-bottom: 0.5rem;
+        }
+        
+        .definition-box p {
+            color: #495057;
+            font-size: 0.95rem;
+        }
+        
+        .discussion-box {
+            background-color: #fff9db;
+            border-left: 4px solid #fcc419;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .discussion-box h4 {
+            color: #e67700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .discussion-box ul {
+            padding-left: 1.2rem;
+        }
+        
+        .discussion-box li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .activity-box {
+            background-color: #f3f0ff;
+            border-left: 4px solid #7950f2;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .activity-box h4 {
+            color: #6741d9;
+            margin-bottom: 0.5rem;
+        }
+        
+        .activity-box p {
+            margin-bottom: 0.5rem;
+        }
+
+        .activity-box ol {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .activity-box li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--dark-color);
+            color: white;
+            border-radius: 15px;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            header {
+                padding: 1.5rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .learning-objectives {
+                flex-direction: column;
+            }
+            
+            .session-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>The Most Important Thing Is: Your Driving Purpose</h1>
+            <h2>Unlock Your Potential and Define Your Path to Success</h2>
+            <p>A 90-minute interactive workshop for ambitious youth</p>
+            <div class="date-box">March 12, 2025</div>
+        </header>
+        
+        <!-- VIDEO SECTION -->
+        <section class="video-section" style="background-color: white; border-radius: 15px; padding: 2rem; margin-bottom: 2rem; box-shadow: var(--shadow);">
+            <h2 class="section-title">Watch: Why Not You</h2>
+            <div style="max-width: 800px; margin: 0 auto; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                <!-- YouTube embed for the video -->
+                <iframe 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px;" 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/C4FfZp02zw4?si=gcMYXaSiGFSCoFDE" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p style="text-align: center; margin-top: 1rem; color: #495057; font-style: italic;">
+                Powerful insights on finding your purpose and staying focused on your goals
+            </p>
+        </section>
+        
+        <!-- INTRO SECTION -->
+        <section class="intro-section">
+            <div class="intro-message">
+                <p>
+                    This dynamic session helps you discover what truly drives you and how to align your education with your career goals. Inspired by top industry leaders, you'll explore "strategic thinking," learning to connect today's choices with tomorrow's success while building a network of like-minded peers who support your journey.
+                </p>
+            </div>
+            
+            <h2 class="section-title">Why Join Us</h2>
+            
+            <div class="why-attend">
+                <div class="why-card">
+                    <h3>Design Your Future</h3>
+                    <p>Take control of your path by identifying what actually matters to you, not what others think should.</p>
+                </div>
+                
+                <div class="why-card">
+                    <h3>Level Up Your Decision-Making</h3>
+                    <p>Learn strategic thinking that helps you weigh short-term choices against long-term career goals.</p>
+                </div>
+                
+                <div class="why-card">
+                    <h3>Build Your Crew</h3>
+                    <p>Connect with other driven students committed to supporting each other's growth and success.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- LEARNING OBJECTIVES -->
+        <section class="learning-section">
+            <h2 class="section-title">What You'll Get</h2>
+            
+            <div class="learning-objectives">
+                <div class="objective-card">
+                    <h3>Discover Your Career North Star</h3>
+                    <p>Identify your true passion and purpose that will guide your academic and career decisions.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>Focus Through Clear Vision</h3>
+                    <p>Learn how avoiding distractions (including substances) keeps you locked in on your most important goals.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>Practical Success Tools</h3>
+                    <p>Create a personalized roadmap and accountability system to transform your vision into reality.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- WORKSHOP ACTIVITIES -->
+        <section class="learning-section">
+            <h2 class="section-title">Workshop Activities</h2>
+            <p style="text-align: center; margin-bottom: 20px; color: #495057;">
+                Click on any activity to see details and instructions
+            </p>
+            
+            <div class="session-grid">
+                <!-- Personal Career Narrative -->
+                <div class="session-card" onclick="toggleSection('career-narrative')">
+                    <h3>Personal Career Narrative <span class="time">20 min</span></h3>
+                    <p>Craft a compelling career narrative that motivates you:</p>
+                    <ul>
+                        <li>Transform your passions into a meaningful career story</li>
+                        <li>Identify your unique strengths and how they align with your goals</li>
+                        <li>Create a personal narrative that keeps you focused when challenges hit</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="career-narrative" class="detailed-content">
+                        <div class="definition-box">
+                            <h4>Key Concepts</h4>
+                            <p>
+                                <strong>Career Narrative:</strong> Your unique story that connects your personal strengths to your professional goals
+                            </p>
+                            <p>
+                                <strong>Inspiration Mining:</strong> Finding motivation in the journeys of successful professionals in your field
+                            </p>
+                            <p>
+                                <strong>Resilience Anchors:</strong> Powerful reminders of your "why" that help you push through obstacles
+                            </p>
+                        </div>
+                        
+                        <div class="activity-box">
+                            <h4>Activity: Crafting Your Personal Career Story</h4>
+                            <p><strong>Materials:</strong> Paper and pen or digital notes</p>
+                            <p><strong>Instructions:</strong></p>
+                            <ol>
+                                <li>Take 5 minutes for quiet reflection on what excites you most about your future</li>
+                                <li>Complete these prompts to craft your personal narrative:</li>
+                                <ul>
+                                    <li><strong>Vision:</strong> "I'm fired up about ___ in my future career, and staying focused helps me by ___."</li>
+                                    <li><strong>Reality Check:</strong> "I know it's challenging to ___, especially when ___."</li>
+                                    <li><strong>Evidence:</strong> "I've observed that people who succeed in this field typically ___."</li>
+                                    <li><strong>Inspiration:</strong> "A success story that resonates with me is ___ because ___."</li>
+                                    <li><strong>Declaration:</strong> "That's why I'm committed to ___ no matter what obstacles arise."</li>
+                                </ul>
+                                <li>Review and refine your narrative until it genuinely inspires you</li>
+                                <li>Optional: Volunteers may share insights during open discussion</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Personal Career Reflection -->
+                <div class="session-card" onclick="toggleSection('career-reflection')">
+                    <h3>Personal Career Reflection <span class="time">10 min</span></h3>
+                    <p>Begin with quiet self-discovery:</p>
+                    <ul>
+                        <li>Reflect on your unique career motivations</li>
+                        <li>Identify what truly energizes you about your future</li>
+                        <li>Set your personal intention for the workshop</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="career-reflection" class="detailed-content">
+                        <div class="activity-box">
+                            <h4>Activity: Career Motivation Journaling</h4>
+                            <p>Take a few minutes to privately journal about:</p>
+                            <p><strong>Prompts:</strong></p>
+                            <ul>
+                                <li>"What aspect of my future career consistently energizes me?"</li>
+                                <li>"When I imagine my ideal workday five years from now, what am I doing?"</li>
+                                <li>"What one career achievement would make me feel most fulfilled?"</li>
+                            </ul>
+                            <p>This is for your eyes only—no need to share unless you choose to during open discussions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mini-Session: Strategic Career Thinking -->
+                <div class="session-card" onclick="toggleSection('strategic-thinking')">
+                    <h3>Strategic Career Thinking <span class="time">15 min</span></h3>
+                    <p>Master the skill of strategic decision-making:</p>
+                    <ul>
+                        <li>Learn how top performers think differently about daily choices</li>
+                        <li>Connect your current classes and activities to long-term career success</li>
+                        <li>Identify and eliminate habits that sabotage your potential</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="strategic-thinking" class="detailed-content">
+                        <div class="definition-box">
+                            <h4>Key Concepts</h4>
+                            <p>
+                                <strong>Strategic Thinking:</strong> Looking beyond immediate situations to evaluate how today's decisions impact tomorrow's opportunities
+                            </p>
+                            <p>
+                                <strong>Purpose-Driven Decisions:</strong> Making choices based on your long-term vision rather than short-term convenience
+                            </p>
+                            <p>
+                                <strong>Career Compounding:</strong> How small daily habits and choices accumulate to create major career advantages or setbacks
+                            </p>
+                        </div>
+                        
+                        <div class="activity-box">
+                            <h4>Examples of Strategic Career Thinking</h4>
+                            <ul>
+                                <li><strong>Basic thinking:</strong> "I'll just take the easiest electives to boost my GPA."</li>
+                                <li><strong>Strategic thinking:</strong> "Which electives will give me skills that stand out on my resume and actually help in my target career?"</li>
+                                <li><strong>Basic thinking:</strong> "I'll go out tonight and worry about the project tomorrow."</li>
+                                <li><strong>Strategic thinking:</strong> "If I finish this project tonight, I can use tomorrow for networking at the career fair instead."</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Career Vision Board -->
+                <div class="session-card" onclick="toggleSection('career-vision')">
+                    <h3>Career Vision Board <span class="time">20 min</span></h3>
+                    <p>Visualize your path to success:</p>
+                    <ul>
+                        <li>Create a visual roadmap of your career goals and milestones</li>
+                        <li>Identify potential roadblocks and strategies to overcome them</li>
+                        <li>Design a visual reminder that keeps you motivated daily</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="career-vision" class="detailed-content">
+                        <div class="activity-box">
+                            <h4>Activity: Creating Your Personal Career Vision Board</h4>
+                            <p><strong>Materials:</strong> Paper, colored pens, markers</p>
+                            <p><strong>Instructions:</strong></p>
+                            <ol>
+                                <li>Take a few minutes for quiet reflection about your ultimate career aspirations</li>
+                                <li>Draw or write your ultimate career goal in the center of your paper</li>
+                                <li>Add images and words that represent key milestones in education, internships, skills, etc.</li>
+                                <li>Include specific habits that support your success (focus time, healthy choices, avoiding distractions)</li>
+                                <li>Add your "strategic thinking" reminders around the edges</li>
+                                <li>This is for your personal use—consider creating a digital version later as your phone wallpaper</li>
+                            </ol>
+                            <p>Remember: This is a personal document that represents <em>your</em> unique vision—there's no right or wrong way to create it.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Open Forum: Career Insights -->
+                <div class="session-card" onclick="toggleSection('open-forum')">
+                    <h3>Open Forum: Career Insights <span class="time">10 min</span></h3>
+                    <p>An optional space to discuss career development ideas:</p>
+                    <ul>
+                        <li>Opportunity to voluntarily share personal insights</li>
+                        <li>Listen to diverse perspectives on career challenges</li>
+                        <li>Contribute to a collaborative learning environment</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="open-forum" class="detailed-content">
+                        <div class="activity-box">
+                            <h4>Activity: Voluntary Insight Sharing</h4>
+                            <p>This is an optional discussion where you can choose to share or simply listen and reflect.</p>
+                            <p><strong>Discussion prompts (respond to any that resonate):</strong></p>
+                            <ul>
+                                <li>What aspect of your career vision feels most meaningful to you?</li>
+                                <li>What's one challenge you're considering in your career journey?</li>
+                                <li>Has anyone discovered a particularly effective habit or practice for staying focused on long-term goals?</li>
+                            </ul>
+                            <p>Remember: No pressure to share—this is about finding what works best for your individual journey.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Feedback -->
+                <div class="session-card" onclick="toggleSection('quick-feedback')">
+                    <h3>Quick Feedback <span class="time">5 min</span></h3>
+                    <p>Help shape future workshops:</p>
+                    <ul>
+                        <li>Share what resonated most with you today</li>
+                        <li>Suggest topics for future career development sessions</li>
+                        <li>Rate your clarity on next steps toward your career goals</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="quick-feedback" class="detailed-content">
+                        <div class="activity-box">
+                            <h4>Activity: Workshop Feedback</h4>
+                            <p>Take a moment to complete our quick digital feedback form.</p>
+                            <p>Your input helps us create even more valuable career development opportunities!</p>
+                            <p><strong>The form asks about:</strong></p>
+                            <ul>
+                                <li>Your clarity on career direction after today's session</li>
+                                <li>Which activities were most valuable to you</li>
+                                <li>Topics you'd like to explore in future workshops</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Personal Action Plan -->
+                <div class="session-card" onclick="toggleSection('action-plan')">
+                    <h3>Personal Action Plan <span class="time">10 min</span></h3>
+                    <p>Transform your insights into real-world results:</p>
+                    <ul>
+                        <li>Develop your individual action steps for the coming week</li>
+                        <li>Learn about resources for independent career development</li>
+                        <li>Create a personal accountability system that works for you</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="action-plan" class="detailed-content">
+                        <div class="activity-box">
+                            <h4>Key Takeaways</h4>
+                            <ul>
+                                <li>Your career purpose can serve as a filter for your academic and personal decisions</li>
+                                <li>Strategic thinking helps you evaluate opportunities more effectively</li>
+                                <li>Your daily habits (including avoiding distractions and substances) directly impact your career trajectory</li>
+                                <li>Self-reflection is a powerful tool for maintaining focus and direction</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-box">
+                            <h4>Your Personal 7-Day Challenge</h4>
+                            <p>Choose 2–3 of these actions that feel most valuable for your journey:</p>
+                            <ol>
+                                <li>Each morning, spend 2 minutes reflecting on your career vision</li>
+                                <li>Before important decisions, ask: "Does this move me toward or away from my goals?"</li>
+                                <li>Identify one time-wasting habit and replace it with a career-building activity</li>
+                                <li>Research a role model in your field and note what you can learn from their path</li>
+                                <li>Experiment with a productivity technique like Pomodoro or time blocking</li>
+                                <li>Create a personal tracking system for your progress (journal, app, etc.)</li>
+                            </ol>
+                            <p>This is your personal journey—customize these suggestions to fit your unique style and goals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- UPDATED QR SECTION -->
+        <section class="qr-section" style="background-color: white; border-radius: 15px; padding: 2rem; margin-bottom: 2rem; box-shadow: var(--shadow); text-align: center;">
+            <h2 class="section-title">Complete Your Career Assessment</h2>
+            <p style="margin-bottom: 1.5rem; color: #495057;">
+                Scan or click the QR code below to access our career assessment tool and discover personalized insights about your strengths and opportunities.
+            </p>
+            
+            <!-- Replace the placeholder image/link below with your own QR code or external link -->
+            <div style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSelyBTc2Jew7UoIhWI3vRxtGB-1iwYDr0Z1PiJhcKuEmsjmnw/viewform?usp=dialog" target="_blank" style="display: inline-block;">
+                    <img
+                        src="C:\Users\jbclu\OneDrive\Documents\Workshops\The_Most_Important_Thing_Is_QR.png"
+                        alt="Career Assessment QR Code"
+                        style="width: 200px; height: 200px; border: 1px solid #ddd; border-radius: 10px;"
+                    />
+                </a>
+            </div>
+            
+            <div style="max-width: 600px; margin: 0 auto;">
+                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
+                    <div style="background-color: #f8f9fa; padding: 1rem; border-radius: 8px; flex: 1; min-width: 200px;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">What You'll Discover</h4>
+                        <p style="font-size: 0.9rem; color: #495057;">
+                            Your career strengths, potential blind spots, and personalized development recommendations
+                        </p>
+                    </div>
+                    <div style="background-color: #f8f9fa; padding: 1rem; border-radius: 8px; flex: 1; min-width: 200px;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Time Required</h4>
+                        <p style="font-size: 0.9rem; color: #495057;">
+                            10–15 minutes to complete the assessment, with immediate results and insights
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FOOTER -->
+        <div class="footer">
+            <p>© 2025 | Club Stride Inc. | March 12, 2025 | Empowering Youth Leaders</p>
+        </div>
+    </div>
+    
+    <!-- TOGGLE SECTION SCRIPT -->
+    <script>
+        function toggleSection(sectionId) {
+            const contentElement = document.getElementById(sectionId);
+            const parentCard = contentElement.parentElement;
+            const expandIcon = parentCard.querySelector('.expand-icon');
+            
+            if (contentElement.classList.contains('active')) {
+                contentElement.classList.remove('active');
+                expandIcon.textContent = '+';
+            } else {
+                contentElement.classList.add('active');
+                expandIcon.textContent = '−';
+            }
+        }
+    </script>
+</body>
+</html>
