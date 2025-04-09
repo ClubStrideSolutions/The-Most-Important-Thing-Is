@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>The Most Important Thing Is: Your Driving Purpose</title>
+    <title>The Most Important Thing Is: Your Driving Purpose (Vallejo Edition)</title>
     <style>
         :root {
             --primary-color: #3a2473;
@@ -264,7 +264,11 @@
             display: block;
             animation: fadeIn 0.5s ease;
         }
-        
+        .qr-section p {
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -375,16 +379,16 @@
         <!-- HEADER -->
         <header>
             <h1>The Most Important Thing Is: Your Driving Purpose</h1>
-            <h2>Unlock Your Potential and Define Your Path to Success</h2>
-            <p>A 90-minute interactive workshop for ambitious youth</p>
-            <div class="date-box">March 12, 2025</div>
+            <h2>Leadership & Career Prep in Action</h2>
+            <p>A 90-minute interactive workshop designed for emerging leaders</p>
+            <div class="date-box">March 13, 2025</div>
         </header>
         
         <!-- VIDEO SECTION -->
         <section class="video-section" style="background-color: white; border-radius: 15px; padding: 2rem; margin-bottom: 2rem; box-shadow: var(--shadow);">
             <h2 class="section-title">Watch: Why Not You</h2>
             <div style="max-width: 800px; margin: 0 auto; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                <!-- YouTube embed for the video -->
+                <!-- YouTube embed -->
                 <iframe 
                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px;" 
                     width="560" 
@@ -398,7 +402,7 @@
                 </iframe>
             </div>
             <p style="text-align: center; margin-top: 1rem; color: #495057; font-style: italic;">
-                Powerful insights on finding your purpose and staying focused on your goals
+                Powerful insights on finding your purpose, staying focused, and growing as a leader
             </p>
         </section>
         
@@ -406,7 +410,7 @@
         <section class="intro-section">
             <div class="intro-message">
                 <p>
-                    This dynamic session helps you discover what truly drives you and how to align your education with your career goals. Inspired by top industry leaders, you'll explore "strategic thinking," learning to connect today's choices with tomorrow's success while building a network of like-minded peers who support your journey.
+                    Welcome to a hands-on, discussion-friendly session where you’ll discover practical strategies to clarify your career vision, strengthen leadership skills, and learn how to stay motivated—especially as you navigate new opportunities. Whether you’re wrapping up your time here or just getting started, this workshop offers tools to confidently plan your next moves.
                 </p>
             </div>
             
@@ -415,17 +419,17 @@
             <div class="why-attend">
                 <div class="why-card">
                     <h3>Design Your Future</h3>
-                    <p>Take control of your path by identifying what actually matters to you, not what others think should.</p>
+                    <p>Take control of your path by focusing on what matters most to you—be it carpentry, community work, or new career paths you haven’t even considered yet.</p>
                 </div>
                 
                 <div class="why-card">
-                    <h3>Level Up Your Decision-Making</h3>
-                    <p>Learn strategic thinking that helps you weigh short-term choices against long-term career goals.</p>
+                    <h3>Level Up Your Leadership</h3>
+                    <p>Practice strategies for taking initiative, making informed decisions, and inspiring those around you—crucial for success in any field.</p>
                 </div>
                 
                 <div class="why-card">
                     <h3>Build Your Crew</h3>
-                    <p>Connect with other driven students committed to supporting each other's growth and success.</p>
+                    <p>Connect with peers and staff from diverse backgrounds, share growth tips, and support each other’s progress in a positive environment.</p>
                 </div>
             </div>
         </section>
@@ -436,18 +440,16 @@
             
             <div class="learning-objectives">
                 <div class="objective-card">
-                    <h3>Discover Your Career North Star</h3>
-                    <p>Identify your true passion and purpose that will guide your academic and career decisions.</p>
+                    <h3>Clarify Your Purpose</h3>
+                    <p>Pinpoint the passions and values that steer your personal and professional growth.</p>
                 </div>
-                
                 <div class="objective-card">
-                    <h3>Focus Through Clear Vision</h3>
-                    <p>Learn how avoiding distractions (including substances) keeps you locked in on your most important goals.</p>
+                    <h3>Strengthen Your Leadership</h3>
+                    <p>Learn and practice key leadership skills that help you stand out and drive positive impact.</p>
                 </div>
-                
                 <div class="objective-card">
-                    <h3>Practical Success Tools</h3>
-                    <p>Create a personalized roadmap and accountability system to transform your vision into reality.</p>
+                    <h3>Map Your Next Steps</h3>
+                    <p>Create practical goals and strategies that guide you through career transitions and opportunities.</p>
                 </div>
             </div>
         </section>
@@ -456,18 +458,43 @@
         <section class="learning-section">
             <h2 class="section-title">Workshop Activities</h2>
             <p style="text-align: center; margin-bottom: 20px; color: #495057;">
-                Click on any activity to see details and instructions
+                Click on any activity to see details and instructions. We’ll use small notebooks and pens for brief reflections or note-taking.
             </p>
             
             <div class="session-grid">
+                <!-- Personal Career Reflection -->
+                <div class="session-card" onclick="toggleSection('career-reflection')">
+                    <h3>Personal Career Reflection <span class="time">10 min</span></h3>
+                    <p>Start with individual self-discovery:</p>
+                    <ul>
+                        <li>Explore what truly motivates you about the future</li>
+                        <li>Consider possible career paths or next steps</li>
+                        <li>Set a personal intention for this workshop</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="career-reflection" class="detailed-content">
+                        <div class="activity-box">
+                            <h4>Activity: Quick Journaling</h4>
+                            <p>Using your small notebook and pen, jot down answers to these prompts:</p>
+                            <ul>
+                                <li><strong>Motivation:</strong> “What topics or tasks energize me the most?”</li>
+                                <li><strong>Future Dream:</strong> “Five years from now, I’d love to be _____.”</li>
+                                <li><strong>Barriers:</strong> “One challenge I need to address is _____.”</li>
+                            </ul>
+                            <p>No need to share unless you choose to during our open discussions!</p>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Personal Career Narrative -->
                 <div class="session-card" onclick="toggleSection('career-narrative')">
                     <h3>Personal Career Narrative <span class="time">20 min</span></h3>
-                    <p>Craft a compelling career narrative that motivates you:</p>
+                    <p>Shape a clear, inspiring career story that fits your unique goals:</p>
                     <ul>
-                        <li>Transform your passions into a meaningful career story</li>
-                        <li>Identify your unique strengths and how they align with your goals</li>
-                        <li>Create a personal narrative that keeps you focused when challenges hit</li>
+                        <li>Translate your experiences into a compelling vision</li>
+                        <li>Highlight leadership moments and skill-building experiences</li>
+                        <li>Stay focused when obstacles arise</li>
                     </ul>
                     <div class="expand-icon">+</div>
                     
@@ -475,59 +502,31 @@
                         <div class="definition-box">
                             <h4>Key Concepts</h4>
                             <p>
-                                <strong>Career Narrative:</strong> Your unique story that connects your personal strengths to your professional goals
+                                <strong>Career Narrative:</strong> Your story connecting personal strengths and professional aims
                             </p>
                             <p>
-                                <strong>Inspiration Mining:</strong> Finding motivation in the journeys of successful professionals in your field
+                                <strong>Inspiration Sources:</strong> Role models or past successes that fuel your determination
                             </p>
                             <p>
-                                <strong>Resilience Anchors:</strong> Powerful reminders of your "why" that help you push through obstacles
+                                <strong>Resilience Reminders:</strong> Phrases or memories that keep you going when things get tough
                             </p>
                         </div>
                         
                         <div class="activity-box">
-                            <h4>Activity: Crafting Your Personal Career Story</h4>
-                            <p><strong>Materials:</strong> Paper and pen or digital notes</p>
+                            <h4>Activity: Drafting Your Story</h4>
                             <p><strong>Instructions:</strong></p>
                             <ol>
-                                <li>Take 5 minutes for quiet reflection on what excites you most about your future</li>
-                                <li>Complete these prompts to craft your personal narrative:</li>
+                                <li>Take a couple of minutes to think about what energizes you about your future career or leadership potential.</li>
+                                <li>Use these prompts to piece together your narrative:</li>
                                 <ul>
-                                    <li><strong>Vision:</strong> "I'm fired up about ___ in my future career, and staying focused helps me by ___."</li>
-                                    <li><strong>Reality Check:</strong> "I know it's challenging to ___, especially when ___."</li>
-                                    <li><strong>Evidence:</strong> "I've observed that people who succeed in this field typically ___."</li>
-                                    <li><strong>Inspiration:</strong> "A success story that resonates with me is ___ because ___."</li>
-                                    <li><strong>Declaration:</strong> "That's why I'm committed to ___ no matter what obstacles arise."</li>
+                                    <li><strong>Vision:</strong> “My goal is to _____ because _____.”</li>
+                                    <li><strong>Challenge:</strong> “A hurdle I face is _____, but I can overcome it by _____.”</li>
+                                    <li><strong>Role Models:</strong> “Someone I admire for their leadership is _____ because _____.”</li>
+                                    <li><strong>Commitment:</strong> “This matters to me because _____.”</li>
                                 </ul>
-                                <li>Review and refine your narrative until it genuinely inspires you</li>
-                                <li>Optional: Volunteers may share insights during open discussion</li>
+                                <li>Review your narrative and adjust until it truly resonates with you.</li>
                             </ol>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Personal Career Reflection -->
-                <div class="session-card" onclick="toggleSection('career-reflection')">
-                    <h3>Personal Career Reflection <span class="time">10 min</span></h3>
-                    <p>Begin with quiet self-discovery:</p>
-                    <ul>
-                        <li>Reflect on your unique career motivations</li>
-                        <li>Identify what truly energizes you about your future</li>
-                        <li>Set your personal intention for the workshop</li>
-                    </ul>
-                    <div class="expand-icon">+</div>
-                    
-                    <div id="career-reflection" class="detailed-content">
-                        <div class="activity-box">
-                            <h4>Activity: Career Motivation Journaling</h4>
-                            <p>Take a few minutes to privately journal about:</p>
-                            <p><strong>Prompts:</strong></p>
-                            <ul>
-                                <li>"What aspect of my future career consistently energizes me?"</li>
-                                <li>"When I imagine my ideal workday five years from now, what am I doing?"</li>
-                                <li>"What one career achievement would make me feel most fulfilled?"</li>
-                            </ul>
-                            <p>This is for your eyes only—no need to share unless you choose to during open discussions.</p>
+                            <p>Volunteers are welcome to share after drafting.</p>
                         </div>
                     </div>
                 </div>
@@ -535,11 +534,11 @@
                 <!-- Mini-Session: Strategic Career Thinking -->
                 <div class="session-card" onclick="toggleSection('strategic-thinking')">
                     <h3>Strategic Career Thinking <span class="time">15 min</span></h3>
-                    <p>Master the skill of strategic decision-making:</p>
+                    <p>Make daily choices that align with your career goals:</p>
                     <ul>
-                        <li>Learn how top performers think differently about daily choices</li>
-                        <li>Connect your current classes and activities to long-term career success</li>
-                        <li>Identify and eliminate habits that sabotage your potential</li>
+                        <li>Understand how small actions add up in the long run</li>
+                        <li>Spot and replace habits that undermine your progress</li>
+                        <li>Stay goal-focused, even when life feels hectic</li>
                     </ul>
                     <div class="expand-icon">+</div>
                     
@@ -547,23 +546,22 @@
                         <div class="definition-box">
                             <h4>Key Concepts</h4>
                             <p>
-                                <strong>Strategic Thinking:</strong> Looking beyond immediate situations to evaluate how today's decisions impact tomorrow's opportunities
+                                <strong>Strategic Thinking:</strong> Linking your day-to-day decisions to long-term goals
                             </p>
                             <p>
-                                <strong>Purpose-Driven Decisions:</strong> Making choices based on your long-term vision rather than short-term convenience
+                                <strong>Purpose-Driven Choices:</strong> Evaluating options based on your career vision
                             </p>
                             <p>
-                                <strong>Career Compounding:</strong> How small daily habits and choices accumulate to create major career advantages or setbacks
+                                <strong>Career Compounding:</strong> How minor daily habits can create major advantages—or setbacks—over time
                             </p>
                         </div>
                         
                         <div class="activity-box">
-                            <h4>Examples of Strategic Career Thinking</h4>
+                            <h4>Real-Life Examples</h4>
                             <ul>
-                                <li><strong>Basic thinking:</strong> "I'll just take the easiest electives to boost my GPA."</li>
-                                <li><strong>Strategic thinking:</strong> "Which electives will give me skills that stand out on my resume and actually help in my target career?"</li>
-                                <li><strong>Basic thinking:</strong> "I'll go out tonight and worry about the project tomorrow."</li>
-                                <li><strong>Strategic thinking:</strong> "If I finish this project tonight, I can use tomorrow for networking at the career fair instead."</li>
+                                <li><strong>Routine vs. Growth:</strong> Attending optional training could open new job prospects.</li>
+                                <li><strong>Connections Count:</strong> Showing initiative at a community project can lead to better references or mentorships.</li>
+                                <li><strong>Study & Skills:</strong> Mastering financial literacy now could lead to greater earnings and savings later.</li>
                             </ul>
                         </div>
                     </div>
@@ -572,28 +570,52 @@
                 <!-- Career Vision Board -->
                 <div class="session-card" onclick="toggleSection('career-vision')">
                     <h3>Career Vision Board <span class="time">20 min</span></h3>
-                    <p>Visualize your path to success:</p>
+                    <p>Visualize your growth and career milestones:</p>
                     <ul>
-                        <li>Create a visual roadmap of your career goals and milestones</li>
-                        <li>Identify potential roadblocks and strategies to overcome them</li>
-                        <li>Design a visual reminder that keeps you motivated daily</li>
+                        <li>Sketch or write out key goals in your notebook</li>
+                        <li>Mark possible roadblocks and ways around them</li>
+                        <li>Create a visual reminder to review daily</li>
                     </ul>
                     <div class="expand-icon">+</div>
                     
                     <div id="career-vision" class="detailed-content">
                         <div class="activity-box">
-                            <h4>Activity: Creating Your Personal Career Vision Board</h4>
-                            <p><strong>Materials:</strong> Paper, colored pens, markers</p>
+                            <h4>Activity: Mapping Your Milestones</h4>
                             <p><strong>Instructions:</strong></p>
                             <ol>
-                                <li>Take a few minutes for quiet reflection about your ultimate career aspirations</li>
-                                <li>Draw or write your ultimate career goal in the center of your paper</li>
-                                <li>Add images and words that represent key milestones in education, internships, skills, etc.</li>
-                                <li>Include specific habits that support your success (focus time, healthy choices, avoiding distractions)</li>
-                                <li>Add your "strategic thinking" reminders around the edges</li>
-                                <li>This is for your personal use—consider creating a digital version later as your phone wallpaper</li>
+                                <li>In the center of a journal page, write or draw your top career or leadership goal.</li>
+                                <li>Add branching lines for key steps (e.g., skill certifications, volunteer experiences, or finishing school).</li>
+                                <li>Note any habits or learning resources you’ll need to succeed (like setting aside study time or budgeting). </li>
+                                <li>Keep your vision board for daily motivation.</li>
                             </ol>
-                            <p>Remember: This is a personal document that represents <em>your</em> unique vision—there's no right or wrong way to create it.</p>
+                            <p>Feel free to share ideas or get feedback from peers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hands-On Leadership Challenge -->
+                <div class="session-card" onclick="toggleSection('leadership-challenge')">
+                    <h3>Hands-On Leadership Challenge <span class="time">15 min</span></h3>
+                    <p>Practice real-time leadership in a fun group scenario:</p>
+                    <ul>
+                        <li>Work in small teams to solve a quick challenge</li>
+                        <li>Observe how leadership and teamwork come into play</li>
+                        <li>Discuss insights about communication and trust</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="leadership-challenge" class="detailed-content">
+                        <div class="activity-box">
+                            <h4>Activity: Leadership in Action</h4>
+                            <p><strong>Scenario Example:</strong> Your team needs to organize a local event with limited time and resources. How do you assign roles, motivate the group, and address obstacles quickly?</p>
+                            <ol>
+                                <li>Form small groups and select a leader/facilitator.</li>
+                                <li>Brainstorm a plan, keeping in mind limited resources and realistic timelines.</li>
+                                <li>Share your group’s approach briefly with others.</li>
+                            </ol>
+                            <p>
+                                Notice how decisions are made, tasks are assigned, and feedback is given—these are key lessons you can apply in any future role.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -601,25 +623,25 @@
                 <!-- Open Forum: Career Insights -->
                 <div class="session-card" onclick="toggleSection('open-forum')">
                     <h3>Open Forum: Career Insights <span class="time">10 min</span></h3>
-                    <p>An optional space to discuss career development ideas:</p>
+                    <p>Share perspectives and advice on next steps:</p>
                     <ul>
-                        <li>Opportunity to voluntarily share personal insights</li>
-                        <li>Listen to diverse perspectives on career challenges</li>
-                        <li>Contribute to a collaborative learning environment</li>
+                        <li>Discuss experiences in work, community, or personal growth</li>
+                        <li>Ask supervisors and peers about transition tips</li>
+                        <li>Offer or request guidance on job searching or skill-building</li>
                     </ul>
                     <div class="expand-icon">+</div>
                     
                     <div id="open-forum" class="detailed-content">
                         <div class="activity-box">
-                            <h4>Activity: Voluntary Insight Sharing</h4>
-                            <p>This is an optional discussion where you can choose to share or simply listen and reflect.</p>
-                            <p><strong>Discussion prompts (respond to any that resonate):</strong></p>
+                            <h4>Discussion Prompts</h4>
                             <ul>
-                                <li>What aspect of your career vision feels most meaningful to you?</li>
-                                <li>What's one challenge you're considering in your career journey?</li>
-                                <li>Has anyone discovered a particularly effective habit or practice for staying focused on long-term goals?</li>
+                                <li>What recent challenge helped you grow the most?</li>
+                                <li>Any proven strategies for staying organized (study schedules, finances, etc.)?</li>
+                                <li>How can we use teamwork to achieve shared goals?</li>
                             </ul>
-                            <p>Remember: No pressure to share—this is about finding what works best for your individual journey.</p>
+                            <p>
+                                Feel free to chime in or just listen. This is a judgment-free space.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -627,25 +649,24 @@
                 <!-- Quick Feedback -->
                 <div class="session-card" onclick="toggleSection('quick-feedback')">
                     <h3>Quick Feedback <span class="time">5 min</span></h3>
-                    <p>Help shape future workshops:</p>
+                    <p>Help us improve future sessions:</p>
                     <ul>
-                        <li>Share what resonated most with you today</li>
-                        <li>Suggest topics for future career development sessions</li>
-                        <li>Rate your clarity on next steps toward your career goals</li>
+                        <li>Share which activities or discussions felt most helpful</li>
+                        <li>Suggest new topics or formats you’d like to see</li>
+                        <li>Reflect on how you feel about your career path now</li>
                     </ul>
                     <div class="expand-icon">+</div>
                     
                     <div id="quick-feedback" class="detailed-content">
                         <div class="activity-box">
                             <h4>Activity: Workshop Feedback</h4>
-                            <p>Take a moment to complete our quick digital feedback form.</p>
-                            <p>Your input helps us create even more valuable career development opportunities!</p>
-                            <p><strong>The form asks about:</strong></p>
+                            <p>Take a moment to fill out our brief feedback form (digital or paper) to let us know:</p>
                             <ul>
-                                <li>Your clarity on career direction after today's session</li>
-                                <li>Which activities were most valuable to you</li>
-                                <li>Topics you'd like to explore in future workshops</li>
+                                <li>What inspired you today</li>
+                                <li>Any part of the workshop you’d like to see expanded</li>
+                                <li>Suggestions for future career/leadership topics</li>
                             </ul>
+                            <p>We appreciate your input—it helps us shape programs that fit your needs.</p>
                         </div>
                     </div>
                 </div>
@@ -653,56 +674,57 @@
                 <!-- Personal Action Plan -->
                 <div class="session-card" onclick="toggleSection('action-plan')">
                     <h3>Personal Action Plan <span class="time">10 min</span></h3>
-                    <p>Transform your insights into real-world results:</p>
+                    <p>Turn your insights into real-world steps:</p>
                     <ul>
-                        <li>Develop your individual action steps for the coming week</li>
-                        <li>Learn about resources for independent career development</li>
-                        <li>Create a personal accountability system that works for you</li>
+                        <li>Commit to a few short-term goals you can start this week</li>
+                        <li>Note any resources (mentors, training, financial tips) you’ll need</li>
+                        <li>Create a simple accountability method that keeps you on track</li>
                     </ul>
                     <div class="expand-icon">+</div>
                     
                     <div id="action-plan" class="detailed-content">
                         <div class="activity-box">
-                            <h4>Key Takeaways</h4>
+                            <h4>Key Reminders</h4>
                             <ul>
-                                <li>Your career purpose can serve as a filter for your academic and personal decisions</li>
-                                <li>Strategic thinking helps you evaluate opportunities more effectively</li>
-                                <li>Your daily habits (including avoiding distractions and substances) directly impact your career trajectory</li>
-                                <li>Self-reflection is a powerful tool for maintaining focus and direction</li>
+                                <li>Your purpose acts as a compass, guiding big and small decisions</li>
+                                <li>Leadership grows through consistent practice—start small and build up</li>
+                                <li>Daily habits (like setting a budget or showing up on time) compound into major career advantages</li>
+                                <li>Open communication and seeking help early can solve problems before they escalate</li>
                             </ul>
                         </div>
                         
                         <div class="activity-box">
                             <h4>Your Personal 7-Day Challenge</h4>
-                            <p>Choose 2–3 of these actions that feel most valuable for your journey:</p>
+                            <p>Pick 2–3 small steps that fit your goals:</p>
                             <ol>
-                                <li>Each morning, spend 2 minutes reflecting on your career vision</li>
-                                <li>Before important decisions, ask: "Does this move me toward or away from my goals?"</li>
-                                <li>Identify one time-wasting habit and replace it with a career-building activity</li>
-                                <li>Research a role model in your field and note what you can learn from their path</li>
-                                <li>Experiment with a productivity technique like Pomodoro or time blocking</li>
-                                <li>Create a personal tracking system for your progress (journal, app, etc.)</li>
+                                <li>Each morning, take a minute to remind yourself why your goals matter.</li>
+                                <li>Check if your daily choices align with your bigger vision.</li>
+                                <li>Identify one unproductive habit and replace it with a skill-builder (e.g., reading about career fields of interest).</li>
+                                <li>Book a quick chat with a mentor or staff member for personalized guidance.</li>
+                                <li>Experiment with time-blocking to stay on top of tasks or studies.</li>
+                                <li>Review or start a simple budget plan to track earnings and expenses.</li>
                             </ol>
-                            <p>This is your personal journey—customize these suggestions to fit your unique style and goals.</p>
+                            <p>
+                                These small changes can spark big progress in your leadership and career journey.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
         <!-- UPDATED QR SECTION -->
         <section class="qr-section" style="background-color: white; border-radius: 15px; padding: 2rem; margin-bottom: 2rem; box-shadow: var(--shadow); text-align: center;">
             <h2 class="section-title">Complete Your Career Assessment</h2>
             <p style="margin-bottom: 1.5rem; color: #495057;">
-                Scan or click the QR code below to access our career assessment tool and discover personalized insights about your strengths and opportunities.
+                Scan or click the QR code below to access our short career assessment tool. Discover insights into your strengths, leadership style, and next steps.
             </p>
             
             <!-- Replace the placeholder image/link below with your own QR code or external link -->
             <div style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSelyBTc2Jew7UoIhWI3vRxtGB-1iwYDr0Z1PiJhcKuEmsjmnw/viewform?usp=dialog" target="_blank" style="display: inline-block;">
                     <img
-                        src="The_Most_Important_Thing_Is_QR.png"
-                        alt="Career Assessment QR Code"
+                    src="The_Most_Important_Thing_Is_QR.png" 
+                    alt="Career Assessment QR Code"
                         style="width: 200px; height: 200px; border: 1px solid #ddd; border-radius: 10px;"
                     />
                 </a>
@@ -713,13 +735,13 @@
                     <div style="background-color: #f8f9fa; padding: 1rem; border-radius: 8px; flex: 1; min-width: 200px;">
                         <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">What You'll Discover</h4>
                         <p style="font-size: 0.9rem; color: #495057;">
-                            Your career strengths, potential blind spots, and personalized development recommendations
+                            Find out more about your unique career interests, leadership strengths, and areas to grow.
                         </p>
                     </div>
                     <div style="background-color: #f8f9fa; padding: 1rem; border-radius: 8px; flex: 1; min-width: 200px;">
                         <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Time Required</h4>
                         <p style="font-size: 0.9rem; color: #495057;">
-                            10–15 minutes to complete the assessment, with immediate results and insights
+                            Just 10–15 minutes. You’ll get immediate results to help guide your next steps.
                         </p>
                     </div>
                 </div>
@@ -728,7 +750,7 @@
         
         <!-- FOOTER -->
         <div class="footer">
-            <p>© 2025 | Club Stride Inc. | March 12, 2025 | Empowering Youth Leaders</p>
+            <p>© 2025 | Club Stride Inc. | Empowering the Next Generation of Vallejo Leaders</p>
         </div>
     </div>
     
